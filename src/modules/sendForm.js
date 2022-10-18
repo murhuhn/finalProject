@@ -55,9 +55,7 @@ const sendForm = ({ idForm }) => {
           formElements.forEach(el => {
               if (el.type === 'tel' && el.value === '' || el.type === 'text' && el.value === '') {
                   count++;
-              } else if (el.value.length < 3) {
-                  count++;
-              }
+              } 
           });
 
           if (count === 0) {
