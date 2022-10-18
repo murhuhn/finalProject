@@ -6,6 +6,8 @@ import anchorLink from './modules/anchor';
 
 import slider from './modules/slider';
 
+import accordion from './modules/accordion';
+
 modal(); 
 
 upArrow();
@@ -13,3 +15,5 @@ upArrow();
 anchorLink();
 
 slider();
+
+accordion();
