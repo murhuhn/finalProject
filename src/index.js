@@ -8,6 +8,10 @@ import slider from './modules/slider';
 
 import accordion from './modules/accordion';
 
+import validation from './modules/validation';
+
+import sendForm from './modules/sendForm';
+
 modal(); 
 
 upArrow();
@@ -17,3 +21,7 @@ anchorLink();
 slider();
 
 accordion();
+
+validation();
+
+sendForm({ idForm: 'form' })
