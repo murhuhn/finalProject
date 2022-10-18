@@ -1443,3 +1443,11 @@ video#video_background {
 .accordeon .element-content.active {
 	display: block;
 }
+
+.services-carousel__item {
+	display: none;
+}
+
+.services-carousel__item.active {
+	display: block !important;
+}

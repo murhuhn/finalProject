@@ -12,6 +12,8 @@ import validation from './modules/validation';
 
 import sendForm from './modules/sendForm';
 
+import carousel from './modules/carousel';
+
 modal(); 
 
 upArrow();
@@ -24,4 +26,8 @@ accordion();
 
 validation();
 
-sendForm({ idForm: 'form' })
+sendForm({ idForm: 'form' });
+
+carousel();
+
+
