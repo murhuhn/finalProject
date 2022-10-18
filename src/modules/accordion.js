@@ -8,9 +8,9 @@ const accordion = () => {
               el.classList.remove('active');
               el.childNodes[3].classList.remove('active');
           } else {
-            accordionElement.forEach((child) => {
-                  child.classList.remove('active');
-                  child.childNodes[3].classList.remove('active');
+            accordionElement.forEach((textEl) => {
+                textEl.classList.remove('active');
+                textEl.childNodes[3].classList.remove('active');
               });
               el.classList.add('active');
               el.childNodes[3].classList.add('active');
