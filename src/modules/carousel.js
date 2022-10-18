@@ -4,15 +4,15 @@ const carousel = () => {
         btnNext = document.querySelector('.arrow-right'),
         btnPrev = document.querySelector('.arrow-left');
 
-  slides.forEach((slide, index) => {
+  slides.forEach((item, index) => {
     if (index <= 2) {
-      slide.classList.add('active');
+      item.classList.add('active');
     }
   });
 
   const currentSlides = () => {
-    slides.forEach(slide => {
-      slide.classList.toggle('active');
+    slides.forEach(item => {
+      item.classList.toggle('active');
     });
   };
 
@@ -27,4 +27,3 @@ const carousel = () => {
 };
 
 export default carousel;
-
