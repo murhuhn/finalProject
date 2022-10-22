@@ -5,7 +5,22 @@ const sendForm = ({ idForm }) => {
   const loadText = 'Загрузка...';
   const errorText = 'Ошибка';
   const successText = 'Данные успешно отправлены!';
+  
+  const validate = (list) => {
 
+    let success = true;
+
+    list.forEach(input => {
+
+        if (input.name == 'tel' && input.value.length < 10) {
+            success = false;
+        }
+        if (input.name == 'tel' && input.value.length > 12) {
+            success = false;
+        }
+    })
+    return success;
+}
   const sendData = (data) => {
       return fetch('https://jsonplaceholder.typicode.com/posts', {
           method: 'POST',
@@ -27,22 +42,22 @@ const sendForm = ({ idForm }) => {
           formbody[key] = val;
       });
 
-      if (formElements) {
-          sendData(formbody)
-              .then(data => {
-                  statusBlock.textContent = successText
-                  formElements.forEach(input => {
-                      input.value = '';
-                  })
-                  setTimeout(clear, 3000);
-              }).catch(error => {
-                  statusBlock.textContent = errorText;
-              })
-
-      } else {
-          alert('Данные не валидны!')
-      }
-  };
+      if (validate(formElements)) {
+        sendData(formbody)
+            .then(data => {
+                statusBlock.textContent = successText;
+                formElements.forEach(input => {
+                    input.value = '';
+                });
+                setTimeout(clear, 3000);
+            }).catch(error => {
+                statusBlock.textContent = errorText;
+            });
+            
+    } else {
+        statusBlock.textContent = "Данные не валидны";
+    }
+};
 
   try {
       if (!form) {
@@ -74,3 +89,4 @@ const sendForm = ({ idForm }) => {
 };
 
 export default sendForm;
+
