@@ -18,7 +18,10 @@ const sendForm = ({ idForm }) => {
         if (input.name == 'tel' && input.value.length > 12) {
             success = false;
         }
-    })
+        if (input.name == 'fio' && input.value.length < 2) {
+            success = false;
+        }
+    });
     return success;
 }
   const sendData = (data) => {
@@ -89,4 +92,5 @@ const sendForm = ({ idForm }) => {
 };
 
 export default sendForm;
+
 
